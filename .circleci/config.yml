@@ -46,6 +46,9 @@ jobs:
       - run:
           name: create
           command: bundle exec rails db:create db:setup
+      - run:
+          name: psql
+          command: sudo apt-get update && sudo apt-get install -y postgresql-client
 
       # Run rspec in parallel
       - ruby/rspec-test
